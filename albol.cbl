@@ -17,6 +17,11 @@ WORKING-STORAGE SECTION.
 
 PROCEDURE DIVISION.
 MAIN-BRANCH.
+    DISPLAY "Albol version 0, Copyright (C) 2025 D. Hargitt"
+    DISPLAY "Albol comes with ABSOLUTELY NO WARRANTY; for details"
+    DISPLAY "view LICENSE.md. This is free software, and you are"
+    DISPLAY "welcome to redistribute it under certain conditions."
+    DISPLAY ""
     DISPLAY "WELCOME TO ALBOL. CHOOSE YOUR DESIRED FUNCTION FROM THE FOLLOWING."
     DISPLAY "ADD    ADD ALBUM RECORD."
     DISPLAY "VIEW   VIEW A LIST OF ALL ALBUM RECORDS."
