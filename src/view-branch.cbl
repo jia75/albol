@@ -1,3 +1,4 @@
+>>SOURCE FORMAT FREE
 *> Copyright (C) 2025 D. Hargitt
 *> This program has been made available under the GNU General Public License.
 *> It is distributed WITHOUT ANY WARRANTY. See LICENSE.md for details.
@@ -58,16 +59,14 @@ VIEW-BRANCH.
             PERFORM VIEW-LIST
         WHEN "OTHER"
             DISPLAY "MODE NOT RECOGNIZED."
+            PERFORM LINE-SPLIT
     END-EVALUATE
     EXIT SECTION.
 
 VIEW-INDIVIDUAL-ALBUM.
     DISPLAY "INPUT A TITLE."
-
     PERFORM LINE-SPLIT
-
     ACCEPT ALBUM-TITLE
-
     PERFORM LINE-SPLIT
 
     OPEN INPUT ALBUM-LIST-FILE

@@ -1,3 +1,4 @@
+>>SOURCE FORMAT FREE
 *> Copyright (C) 2025 D. Hargitt
 *> This program has been made available under the GNU General Public License.
 *> It is distributed WITHOUT ANY WARRANTY. See LICENSE.md for details.

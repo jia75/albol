@@ -1,3 +1,4 @@
+>>SOURCE FORMAT FREE
 *> Copyright (C) 2025 D. Hargitt
 *> This program has been made available under the GNU General Public License.
 *> It is distributed WITHOUT ANY WARRANTY. See LICENSE.md for details.
@@ -50,14 +51,30 @@ ADD-BRANCH.
 
     OPEN INPUT ALBUM-LIST-FILE
 
+    IF FILE-STATUS-CODE EQUAL "35"
+        DISPLAY "ERROR: FILE 'album-list.txt' DOES NOT EXIST."
+        DISPLAY "PLEASE CREATE THE FILE."
+        PERFORM LINE-SPLIT
+        CLOSE ALBUM-LIST-FILE
+        EXIT SECTION
+    ELSE
+        IF FILE-STATUS-CODE NOT EQUAL "00"
+            DISPLAY "WRITE FAILED WITH STATUS: " FILE-STATUS-CODE
+            PERFORM LINE-SPLIT
+            CLOSE ALBUM-LIST-FILE
+            EXIT SECTION
+        END-IF
+    END-IF
+
     MOVE 'N' TO EOF
     PERFORM UNTIL EOF-REACHED
         READ ALBUM-LIST-FILE
             AT END MOVE 'Y' TO EOF
             NOT AT END IF ALBUM-TITLE-RECORD EQUAL ALBUM-TITLE
                 DISPLAY "RECORD ALREADY EXISTS."
+                PERFORM LINE-SPLIT
                 CLOSE ALBUM-LIST-FILE
-                EXIT PARAGRAPH
+                EXIT SECTION
             END-IF
     END-PERFORM
 
@@ -76,7 +93,8 @@ ADD-BRANCH.
                 REWRITE ALBUM-RECORD
                 CLOSE ALBUM-LIST-FILE
                 DISPLAY "SUCCESS."
-                EXIT PARAGRAPH
+                PERFORM LINE-SPLIT
+                EXIT SECTION
             END-IF
     END-PERFORM
 
@@ -90,24 +108,11 @@ ADD-BRANCH.
 
     OPEN EXTEND ALBUM-LIST-FILE
 
-    IF FILE-STATUS-CODE EQUAL "35"
-        PERFORM LINE-SPLIT
-        DISPLAY "ERROR: FILE 'album-list.txt' DOES NOT EXIST."
-        DISPLAY "PLEASE CREATE THE FILE."
-        CLOSE ALBUM-LIST-FILE
-        EXIT SECTION
-    ELSE
-        IF FILE-STATUS-CODE NOT EQUAL "00"
-            PERFORM LINE-SPLIT
-            DISPLAY "WRITE FAILED WITH STATUS: " FILE-STATUS-CODE
-            CLOSE ALBUM-LIST-FILE
-            EXIT SECTION
-        END-IF
-    END-IF
-
     WRITE ALBUM-RECORD
 
     DISPLAY "SUCCESS."
+
+    PERFORM LINE-SPLIT
 
     CLOSE ALBUM-LIST-FILE
     
