@@ -224,7 +224,7 @@ TRAC-LIST.
                     FUNCTION LOWER-CASE(TRACK-ALBUM)
                 DISPLAY "|" TRACK-TITLE-RECORD "|"
                 DISPLAY "+--------------------------------------------------+"
-                SET FOUND-RECORD TO "Y"
+                SET FOUND-RECORD-TRUE TO TRUE
             END-IF
     END-PERFORM
 
