@@ -5,6 +5,8 @@
 interactive utility that stores information about albums. It is available under
 the GNU Public License Version 2 (see LICENSE.md for more).
 
+![logo](ALBOL.png)
+
 ## Features
 
 Using Albol, it is possible to add albums to a library (containing an artist
