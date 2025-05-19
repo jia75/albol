@@ -11,7 +11,7 @@ the GNU Public License Version 2 (see LICENSE.md for more).
 
 Using Albol, it is possible to add albums to a library (containing an artist
 and a title) and give them ratings. Based on these ratings and albums, it 
-Albol generates statistics and rankings. Also, you can store individual tracks,
+Albol generates statistics. Also, you can store individual tracks,
 and connect them with albums.
 
 ## To Run

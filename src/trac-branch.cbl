@@ -222,8 +222,8 @@ TRAC-LIST.
             AT END MOVE 'Y' TO EOF
             NOT AT END IF FUNCTION LOWER-CASE(TRACK-ALBUM-RECORD) EQUAL
                     FUNCTION LOWER-CASE(TRACK-ALBUM)
-                DISPLAY "|                       " TRACK-NUMBER-RECORD
-                        "                       |"
+                DISPLAY "|                        " TRACK-NUMBER-RECORD
+                        "                        |"
                 DISPLAY "|" TRACK-TITLE-RECORD "|"
                 DISPLAY "+--------------------------------------------------+"
                 SET FOUND-RECORD-TRUE TO TRUE
