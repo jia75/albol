@@ -35,6 +35,9 @@ WORKING-STORAGE SECTION.
     01 FOUND-RECORD PICTURE X.
         88 FOUND-RECORD-TRUE VALUE 'Y'.
         88 FOUND-RECORD-FALSE VALUE 'N'.
+    01 STRING-LENGTH PICTURE 99.
+    01 LINE-OUTPUT PICTURE X(51).
+    01 PAD-INDEX PICTURE 99.
 
 PROCEDURE DIVISION.
 TRAC-BRANCH.
@@ -224,7 +227,19 @@ TRAC-LIST.
                     FUNCTION LOWER-CASE(TRACK-ALBUM)
                 DISPLAY "|                        " TRACK-NUMBER-RECORD
                         "                        |"
-                DISPLAY "|" TRACK-TITLE-RECORD "|"
+
+                MOVE LENGTH OF FUNCTION TRIM(TRACK-TITLE-RECORD) TO 
+                        STRING-LENGTH
+                COMPUTE STRING-LENGTH = (50 - STRING-LENGTH) / 2
+                MOVE SPACES TO LINE-OUTPUT
+                MOVE 1 TO PAD-INDEX
+                MOVE "|" TO LINE-OUTPUT (PAD-INDEX:1)
+                ADD STRING-LENGTH TO PAD-INDEX
+                MOVE LENGTH OF FUNCTION TRIM(TRACK-TITLE-RECORD) TO 
+                        STRING-LENGTH
+                MOVE FUNCTION TRIM(TRACK-TITLE-RECORD) TO LINE-OUTPUT
+                        (PAD-INDEX:STRING-LENGTH)
+                DISPLAY LINE-OUTPUT "|"
                 DISPLAY "+--------------------------------------------------+"
                 SET FOUND-RECORD-TRUE TO TRUE
             END-IF

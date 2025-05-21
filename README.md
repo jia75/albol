@@ -19,8 +19,8 @@ and connect them with albums.
 The first step to run Albol is to compile it. The provided `make.sh` file can
 be used for this purpose. It depends on the GnuCOBOL compiler (check if it
 exists using the command `cobc`). After running it, execute the file located at
-`./bin/out` from the location where you want your record file (`album-list.txt`
-to be stored).
+`./bin/out` from the location where you want your record files
+(`album-list.txt`) to be stored.
 
 ## Vague Notes
 
