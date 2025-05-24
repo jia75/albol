@@ -1,3 +1,4 @@
-bin/*
+bin
+obj
 album-list.txt
 track-list.txt

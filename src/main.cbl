@@ -4,7 +4,7 @@
 *> It is distributed WITHOUT ANY WARRANTY. See LICENSE.md for details.
 
 IDENTIFICATION DIVISION.
-PROGRAM-ID. ALBOL.
+PROGRAM-ID. MAIN.
 
 ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
@@ -40,7 +40,7 @@ WORKING-STORAGE SECTION.
 PROCEDURE DIVISION.
 MAIN-BRANCH.
     PERFORM LINE-SPLIT
-    DISPLAY "Albol version 1.0.0, Copyright (C) 2025 D. Hargitt"
+    DISPLAY "Albol version 1.1.0, Copyright (C) 2025 D. Hargitt"
     DISPLAY "Albol comes with ABSOLUTELY NO WARRANTY; for details"
     DISPLAY "view LICENSE.md. This is free software, and you are"
     DISPLAY "welcome to redistribute it under certain conditions."
