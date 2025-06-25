@@ -1,5 +1,7 @@
 # ALBOL
 
+![Static Badge](https://img.shields.io/badge/License-GPL_2-red)
+
 **Albol** (stylized as *ALBOL*, a portmanteau of "album" and "COBOL") is a 2025
 (surprisingly!) project written entirely in (GNU) COBOL. It is a command line
 interactive utility that stores information about albums. It is available under
